@@ -134,11 +134,17 @@ function sendTransaction(isAdding) {
       amountEl.value = "";
     }
   })
+  //(NEW) formData changed to sendTransaction
+  // .catch(err => {
+  //   console.log(err);
+  //   saveRecord(transaction);
+  // });
   .catch(err => {
     // fetch failed, so save in indexed db
+    console.log(err);
     saveRecord(transaction);
 
-    // clear form
+    //clear form
     nameEl.value = "";
     amountEl.value = "";
   });
