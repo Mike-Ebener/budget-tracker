@@ -48,4 +48,14 @@
   <script src="./js/idb.js"></script>
   <!-- (NEW) connection to indexed DB placed after initial setup  -->
 </body>
+<!-- (NEW) -->
+<script>
+  (function() {
+    if("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./service-worker.js")
+        .then(() => console.log("Service Worker registered successfully."))
+        .catch(error => console.log("Service Worker registration failed:", error));
+    }
+  })();
+  </script>
 </html>
